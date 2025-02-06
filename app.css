@@ -1,2 +1,170 @@
-div {
+/* variables */
+:root {
+    --ev-80s-green: #9bc53d;
+    --ev-80s-pink: #db2f93;
+    --ev-80s-yellow: #f9de75;
+    --ev-80s-orange: #ef8a46;
+    --ev-80s-purple: #8026f5;
+    --ev-80s-mint: #a1fcc3;
+    --ev-80s-gray: #5a576c;
+
+    --color-header-background: #bfffef;
+    --color-header-background-platinum: #e5e4e2;
+    --color-header-background-gold: #d6c372;
+    --color-header-background-silver: #c6c7be;
+    --color-header-background-bronze: #ce8946;
+    --ease-in-out-3: cubic-bezier(0.1, 0, 0.9, 1);
+    --ease-out-3: cubic-bezier(0, 0, 0.3, 1);
+    --animation-pulse: pulse 2s var(--ease-out-3) infinite;
+    --animation-float: float 3s var(--ease-in-out-3) infinite;
+}
+
+/* animations  */
+/* heading animation inspired by Glitch 2024 year-in-review */
+@keyframes pulse {
+    50% {
+        transform: scale(0.9);
+    }
+}
+
+@keyframes float {
+    50% {
+        transform: translateY(-25%);
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0.1;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes change-color {
+    0% {
+        color: var(--ev-80s-green);
+    }
+    50% {
+        color: var(--ev-80s-pink);
+    }
+    100% {
+        color: var(--ev-80s-purple);
+    }
+}
+
+/* styles */
+
+.ev-tickets-wrap {
+    text-align: center;
+}
+
+.ev-tickets-wrap p {
+    font-size: 1.5em;
+}
+
+/* free drink ticket CTA */
+.ev-80s-highlight {
+    animation: change-color 1500ms;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    font-weight: bold;
+}
+
+/* animated border */
+.ev-animated-hr {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.ev-animated-hr-cell {
+    height: 5px;
+    animation: fade-in 1000ms;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.hr-medium .ev-animated-hr-cell {
+    height: 3px;
+}
+
+.hr-small .ev-animated-hr-cell {
+    height: 1px;
+}
+
+.ev-animated-hr-cell:first-of-type {
+    background-color: var(--ev-80s-green);
+}
+
+.ev-animated-hr-cell:nth-of-type(2) {
+    background-color: var(--ev-80s-pink);
+    animation-delay: 1000ms;
+}
+
+.ev-animated-hr-cell:nth-of-type(3) {
+    background-color: var(--ev-80s-yellow);
+    animation-delay: 800ms;
+}
+
+.ev-animated-hr-cell:nth-of-type(4) {
+    background-color: var(--ev-80s-purple);
+    animation-delay: 200ms;
+}
+
+.ev-animated-hr-cell:nth-of-type(5) {
+    background-color: var(--ev-80s-mint);
+    animation-delay: 400ms;
+}
+
+.ev-animated-hr-cell:nth-of-type(6) {
+    background-color: var(--ev-80s-gray);
+    animation-delay: 600ms;
+}
+
+/* sponsorship headings */
+.ev-sponsorship-level-title {
+    text-align: center;
+    margin: 15px 0;
+
+    & h2 {
+        margin-top: 20px;
+    }
+}
+
+.ev-sponsorship-level {
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+}
+
+.ev-sponsorship-level::before {
+    content: '';
+    width: 105%;
+    background-color: var(--color-header-background);
+    height: 1.5rem;
+    bottom: 0px;
+    position: absolute;
+    right: 5px;
+    z-index: -1;
+    animation: var(--animation-pulse), var(--animation-float);
+    animation-direction: alternate;
+}
+
+.ev-sponsorship-level.level-platinum::before {
+    background-color: var(--color-header-background-platinum);
+}
+
+.ev-sponsorship-level.level-gold::before {
+    background-color: var(--color-header-background-gold);
+}
+
+.ev-sponsorship-level.level-silver::before {
+    background-color: var(--color-header-background-silver);
+}
+
+.ev-sponsorship-level.level-bronze::before {
+    background-color: var(--color-header-background-bronze);
 }
