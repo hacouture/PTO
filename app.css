@@ -261,6 +261,7 @@ a.squiggle-link {
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+    text-decoration: none;
 }
 
 @media (min-width: 768px) {
