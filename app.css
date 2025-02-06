@@ -1,5 +1,6 @@
 /* variables */
 :root {
+    --color0-text: #222;
     --ev-80s-green: #9bc53d;
     --ev-80s-pink: #db2f93;
     --ev-80s-yellow: #f9de75;
@@ -52,6 +53,30 @@
     }
     100% {
         color: var(--ev-80s-purple);
+    }
+}
+
+@keyframes change-background {
+    0% {
+        color: var(--ev-80s-green);
+    }
+    50% {
+        color: var(--ev-80s-pink);
+    }
+    100% {
+        color: var(--ev-80s-purple);
+    }
+}
+
+@keyframes change-background {
+    0% {
+        background-color: var(--ev-80s-green);
+    }
+    50% {
+        background-color: var(--ev-80s-pink);
+    }
+    100% {
+        background-color: var(--ev-80s-purple);
     }
 }
 
@@ -220,7 +245,8 @@ a.squiggle-link {
     gap: 5px;
     font-size: var(--button-font-size, 1.25rem);
     text-decoration: none;
-    color: #222;
+    font-weight: bold;
+    color: var(--color-text, #222);
     background-color: #9bc53d;
     text-align: center;
     padding: 15px;
@@ -228,8 +254,13 @@ a.squiggle-link {
 }
 
 .ev-home-main-actions a:hover {
-    background-color: #222;
-    color: #fff;
+    /* background-color: #222; */
+    /* color: #fff; */
+
+    animation: change-background 1500ms;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 
 @media (min-width: 768px) {
