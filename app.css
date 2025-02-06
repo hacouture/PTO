@@ -58,25 +58,13 @@
 
 @keyframes change-background {
     0% {
-        color: var(--ev-80s-green);
-    }
-    50% {
-        color: var(--ev-80s-pink);
-    }
-    100% {
-        color: var(--ev-80s-purple);
-    }
-}
-
-@keyframes change-background {
-    0% {
-        background-color: var(--ev-80s-green);
+        background-color: var(--ev-80s-orange);
     }
     50% {
         background-color: var(--ev-80s-pink);
     }
     100% {
-        background-color: var(--ev-80s-purple);
+        background-color: var(--ev-80s-yellow);
     }
 }
 
