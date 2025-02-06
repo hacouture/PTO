@@ -13,6 +13,7 @@
     --color-header-background-gold: #d6c372;
     --color-header-background-silver: #c6c7be;
     --color-header-background-bronze: #ce8946;
+
     --ease-in-out-3: cubic-bezier(0.1, 0, 0.9, 1);
     --ease-out-3: cubic-bezier(0, 0, 0.3, 1);
     --animation-pulse: pulse 2s var(--ease-out-3) infinite;
@@ -55,7 +56,7 @@
 }
 
 /* styles */
-
+/* tickets page */
 .ev-tickets-wrap {
     text-align: center;
 }
@@ -167,4 +168,28 @@
 
 .ev-sponsorship-level.level-bronze::before {
     background-color: var(--color-header-background-bronze);
+}
+
+/* fun links */
+/* squiggles! */
+a.squiggle-link {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-15px);}}%3C/style%3E%3Cpath fill='none' stroke='%235900c4' stroke-linejoin='round' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
+
+    display: inline-block;
+    background-repeat: repeat-x;
+    background-size: 1em 1em;
+    background-position: 0 160%;
+    padding-bottom: 6px;
+    background-repeat: repeat-x;
+    text-decoration: none;
+    font-weight: 600;
+    line-height: 1;
+}
+
+div.squiggle-line {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-15px);}}%3C/style%3E%3Cpath fill='none' stroke='%235900c4' stroke-linejoin='round' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
+    height: 10px;
+    background-repeat: repeat-x;
+    background-size: 1em 1em;
+    padding-bottom: 10px;
 }
